@@ -301,29 +301,3 @@ elif section == "Conclusion":
     be based on this methodology.
     """)
 
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # Meet the Team Section
-    st.header("Meet the Team")
-    
-    # Names of the Members
-    team_members = [
-        "Member Name",
-        "Member Name",
-        "Member Name",
-        "Member Name",
-        "Member Name",
-        "Member Name"
-    ]
-
-    cols = st.columns(len(team_members))  
-    for i, member in enumerate(team_members):
-        with cols[i]:
-            st.markdown(
-                f"<div style='width: 100px; height: 100px; border-radius: 50%; background-color: lightgray; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 12px;'>{member}</div>", 
-                unsafe_allow_html=True
-            )
-            st.write(member) 
-
