@@ -29,7 +29,7 @@ st.markdown(
 
 # Sidebar navigation
 st.sidebar.title('Main Menu')
-section = st.sidebar.radio("Go to", ["Introduction", "Descriptive Statistics", "Histograms & Box Plots", "Correlation", "Interactive Visualizations", "Conclusion"])
+section = st.sidebar.radio("Go to", ["Introduction", "Descriptive Statistics", "Histograms & Box Plots", "Correlation", "Additional Graphs", "Conclusion"])
 
 # Introduction Section
 if section == "Introduction":
@@ -106,12 +106,13 @@ elif section == "Descriptive Statistics":
     # Statistics
     st.subheader("Summary Statistics Table")
     st.write("""
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget tempus arcu. Vestibulum vitae cursus turpis. 
-    Morbi dapibus nunc eget neque mattis, non sagittis ex viverra. Phasellus hendrerit nisl ac lorem ultricies, ac varius 
-    quam lobortis. Integer iaculis enim elit, et faucibus nulla gravida in. Duis sem felis, ultrices vel mi sed, fringilla 
-    bibendum elit. Sed sit amet diam ante. Nulla facilisi. In non sem interdum diam tristique cursus. Vivamus in massa a 
-    nisi dapibus suscipit. Pellentesque quis velit nec lacus pretium egestas. Fusce lacinia augue nibh, ac tempus erat 
-    feugiat at. Maecenas iaculis in tortor id blandit.
+    The summary statistics provide an overview of key weather variables, including temperature, humidity, wind speed, and 
+    pressure. The mean values indicate typical conditions during the observation period, with an average temperature of 
+    approximately 11.93°C and humidity levels around 73%. The wind speed averaged 10.81 km/h, while visibility remained
+    steady at about 10.35 km. The median and percentile values offer insights into the data's distribution, with temperature 
+    and apparent temperature both having a median of 12°C, and wind bearings typically around 180°. This analysis helps 
+    identify the general trends and variability in the weather data, allowing for a deeper understanding of day-to-day 
+    conditions.
     """)
 
     st.markdown("<br>", unsafe_allow_html=True)
@@ -123,9 +124,11 @@ elif section == "Histograms & Box Plots":
     st.title('Histograms and Box Plots')
 
     st.write("""
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget tempus arcu. Vestibulum vitae cursus turpis. 
-    Morbi dapibus nunc eget neque mattis, non sagittis ex viverra. Phasellus hendrerit nisl ac lorem ultricies, ac varius 
-    quam lobortis.
+    In this section, we visualize the distribution and spread of key weather variables through histograms and box plots. 
+    Histograms provide a detailed look at how frequently different values occur, highlighting the underlying distribution 
+    of each variable. Box plots, on the other hand, give a concise summary of the data's range, median, and any potential 
+    outliers. Together, these visualizations offer a clearer understanding of the variability in temperature, humidity, 
+    wind speed, and other weather metrics, helping to identify trends and anomalies in the dataset.
     """)
 
     st.markdown("<br>", unsafe_allow_html=True)
@@ -145,14 +148,14 @@ elif section == "Histograms & Box Plots":
 
     # List of explanatory texts for each histogram
     explanatory_texts_histogram = [
-        "Temperature (C): This histogram shows the distribution of temperatures over the recorded period.",
-        "Apparent Temperature (C): This histogram depicts the perceived temperature experienced by individuals.",
-        "Humidity: This histogram illustrates the variation in humidity levels during the observation period.",
-        "Wind Speed (km/h): This histogram represents the distribution of wind speeds encountered.",
-        "Wind Bearing (degrees): This histogram shows the directional distribution of wind during the recordings.",
-        "Visibility (km): This histogram displays the range of visibility measured in kilometers.",
-        "Loud Cover: This histogram indicates the distribution of loud cover values throughout the dataset.",
-        "Pressure (millibars): This histogram represents the atmospheric pressure levels recorded."
+        "Temperature (C): This histogram shows the distribution of temperature data, with most values clustering between -10°C and 30°C, peaking around 10°C. The bell-shaped pattern indicates a normal distribution, with fewer extreme cold and hot temperatures, highlighting the typical temperature range and rare outliers in the dataset.",
+        "Apparent Temperature (C): This histogram depicts the distribution of apparent temperature values, with most data points clustering between -10°C and 30°C, and a peak around 20°C. The bell-shaped curve suggests a normal distribution, with fewer extreme cold and hot apparent temperatures, illustrating the range of how temperatures feel to humans based on factors like wind and humidity.",
+        "Humidity: This histogram illustrates the variation in humidity levels, with most of the data concentrated between 0.6 and 1.0, indicating relatively high humidity levels. The frequency increases steadily as humidity approaches 1.0, peaking just below this maximum value. This suggests that the dataset commonly experiences high humidity, with lower humidity values occurring less frequently.",
+        "Wind Speed (km/h): This histogram represents the distribution of wind speeds encountered, wind speeds in the dataset are mostly between 5 and 15 km/h, with a peak around 10 km/h, and fewer occurrences of wind speeds above 30 km/h, indicating a right-skewed distribution with generally low wind speeds.",
+        "Wind Bearing (degrees): This histogram shows the directional distribution of wind bearings (in degrees), where the wind comes from different directions. The data is relatively evenly distributed across all angles, with noticeable peaks around 150°, 0°, and 300°, indicating that winds from these directions are more frequent compared to others. There are also troughs around 50° and 250°, suggesting fewer winds from those angles.",
+        "Visibility (km): This histogram displays the range of visibility measured in kilometers. Most of the visibility readings are clustered around two distinct values: around 10 km, with a very high frequency, and around 16 km, also quite common. Visibility below 10 km is much less frequent, with relatively consistent low counts across the range from 0 to 8 km. This suggests that the majority of observations had either clear or nearly clear conditions (10-16 km), while poor visibility conditions are rarer.",
+        "CLoud Cover: This histogram indicates the distribution of cloud cover values throughout the dataset. The data is highly skewed, with nearly all values concentrated at zero, indicating either missing or homogeneous data for cloud cover in the dataset. This indicates that the variable may require further investigation or alternative handling methods in the analysis.",
+        "Pressure (millibars): This histogram represents the atmospheric pressure levels recorded (in millibars), where most values are clustered near 1000 millibars, with a few near zero. This suggests the dataset primarily contains typical atmospheric pressure values, but also some outliers or possibly erroneous data, which may need additional validation or adjustment."
     ]
 
     # List of explanatory texts for each box plot
@@ -231,12 +234,12 @@ elif section == "Correlation":
     st.title('Correlation Analysis')
 
     st.write("""
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget tempus arcu. Vestibulum vitae cursus turpis. 
-    Morbi dapibus nunc eget neque mattis, non sagittis ex viverra. Phasellus hendrerit nisl ac lorem ultricies, ac varius 
-    quam lobortis. Integer iaculis enim elit, et faucibus nulla gravida in. Duis sem felis, ultrices vel mi sed, fringilla 
-    bibendum elit. Sed sit amet diam ante. Nulla facilisi. In non sem interdum diam tristique cursus. Vivamus in massa a 
-    nisi dapibus suscipit. Pellentesque quis velit nec lacus pretium egestas. Fusce lacinia augue nibh, ac tempus erat 
-    feugiat at. Maecenas iaculis in tortor id blandit.
+    The correlation analysis provides valuable insights into the relationships between various weather variables. The heatmap 
+    visually represents these correlations, with colors indicating the strength and direction of the relationships. For example, 
+    temperature and apparent temperature show a strong positive correlation, while temperature and humidity display a negative 
+    correlation. Other variables, such as wind speed and pressure, exhibit weaker or negligible correlations with most 
+    parameters. This analysis helps identify key patterns in the data, which can inform further exploration and predictive 
+    modeling.
     """)
     
     # Select only numerical columns
@@ -250,7 +253,7 @@ elif section == "Correlation":
     st.pyplot(plt)
 
 #Interactive Visualilization
-elif section == "Interactive Visualizations":
+elif section == "Additional Graphs":
  st.title('Additional Graphs')
  st.subheader('Interactive Visualizations')
  
@@ -261,6 +264,13 @@ elif section == "Interactive Visualizations":
              labels={'Precip Type': 'Precipitation Type', 'Wind Speed (km/h)': 'Wind Speed (km/h)'},
              barmode='group')
  st.plotly_chart(fig)
+ st.write("""
+ This bar chart shows that areas with rain experience significantly higher wind speeds compared to those with snow. Rain is 
+ associated with nearly 0.8 million km/h of wind speed, while snow conditions see much lower wind speeds, around 0.2 million 
+ km/h. This indicates that rainy weather typically comes with stronger winds than snowy conditions.
+ """)
+
+ st.markdown("---")
 
  # Tentative: Interactive Scatter Plot (e.g., Temperature vs. Humidity)
  st.write("An interactive scatter plot visualizing the relationship between Temperature and Humidity:")
@@ -268,7 +278,12 @@ elif section == "Interactive Visualizations":
                          title='Temperature vs Humidity by Precipitation Type',
                          labels={'Temperature (C)': 'Temperature (°C)', 'Humidity': 'Humidity (%)'})
  st.plotly_chart(scatter_fig)
-
+ st.write("""
+ The data reveals that snow typically occurs at lower temperatures, ranging from around -20°C to 10°C, and is associated with 
+ higher humidity levels. In contrast, rain is present across a wider range of temperatures, from approximately 0°C to 40°C, 
+ but tends to have lower humidity values as temperatures increase. This suggests that rain is more common in warmer and drier 
+ conditions, while snow is found in colder, more humid environments.
+ """)
 # Conclusion Section
 elif section == "Conclusion":
     st.title('Conclusion')
